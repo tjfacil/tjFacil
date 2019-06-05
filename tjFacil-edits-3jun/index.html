@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TJ Fácil</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Ubuntu:300,400,500,700&display=swap"> 
+    <link rel="stylesheet" href="style2.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="barraTopo">
+        <div class="classeBusca"> 
+            <form action="#" class="formBusca">
+                <input type="text" id="barraBusca" placeholder="número do processo no formato CNJ">
+                <button id="botaoBusca" onclick="buscaTJFacil()">Buscar</button>
+            </form>
+        </div>
+        
+        <div class="classeMenu">
+            <a href="#">Como utilizar</a>
+            <a href="#">TJFácil</a>
+        </div>
+    </div>
+
+    <div id="divConteudo">
+        <iframe id="frameConteudo"></iframe>
+    </div>
+</body>
+</html>
