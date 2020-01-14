@@ -4,25 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TJ Fácil Teste Git</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Ubuntu:300,400,500,700&display=swap"> 
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700|Merriweather:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="style.css">
+    <script src="object.js"></script>
     <script src="script.js"></script>
+    <title>TJFácil</title>
 </head>
+
 <body>
-    <nav>
-        <ul class="classeBusca">
-            <li><h1>TJFácil</h1></li>
-            <li><input type="text" id="barraBusca"></li>
-            <li><button id="botaoBusca" onclick="buscaTJFacil()">Busca</button></li>
-        </ul>
-        <ul class="classeMenu">
-            <li><a href="#">Quem somos</a></li>
-            <li><a href="#">Como utilizar</a></li>
-        </ul>
-    </nav>
-    <div id="divConteudo">
-        <iframe id="frameConteudo"></iframe>
+    <div class="divBarraTopo">
+        <a href="#" id="link-git">araleo</a>
+        <a href="#" id="link-instrucoes">Como utilizar</a>
     </div>
+
+    <div class="divLogo">
+        <h1>TJFácil</h1>
+    </div>
+
+    <div class="divBarraBusca">
+            <form action="" id="formBusca" onsubmit="buscaTJFacil()">
+                <input type="text" name="buscatjfacil" id="barraBusca" placeholder=" Digite o número do processo (formato CNJ)">
+                <input type="submit" value="Busca">
+            </form>
+    </div>
+
+    <div class="divBotoes">
+        <input type="radio" value="0" name="instancia" id="grau_1">
+        <label for="grau_1"> 1ª Instância</label>
+        <input type="radio" value="0" name="instancia" id="grau_2">
+        <label for="grau_2"> 2ª Instância</label>
+        <input type="radio" value="0" name="instancia" id="stj">
+        <label for="stj"> STJ</label>
+        <input type="radio" value="0" name="instancia" id="stf">
+        <label for="stf"> STF</label>
+        <input type="radio" value="0" name="instancia" id="tst">
+        <label for="tst"> TST</label>
+    </div>
+
+    <div class="divProcEletronico">
+        <input type="checkbox" name="eproc" id="eproc">
+        <label for="eproc"> Processo eletrônico</label>
+    </div>
+
 </body>
 </html>

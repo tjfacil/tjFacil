@@ -3,52 +3,99 @@ function preparaNumero(input) {
     if (input.length > 20) {
         input = input.slice(-20);
     }
-    return input.padStart(20, "0");
+    let numero = input.padStart(20, "0");
+    let codTribunal = numero.slice(13, -4);
+    let codRegiao = numero.slice(-4);
+
+    let numObj = {
+        cnj: numero,
+        tribunal: codTribunal,
+        regiao: codRegiao
+    };
+
+    if (numObj.tribunal.charAt(0) == "4") {
+        numObj.tribunal += numObj.regiao.charAt(0) + numObj.regiao.charAt(1); 
+    };
+
+    if (numObj.tribunal.charAt(0) == "6") {
+        numObj.tribunal = "600";
+    }
+
+    if (numObj.tribunal.charAt(0) == "7") {
+        numObj.tribunal = "700";
+    }
+
+    return numObj;
 }
 
-function defineTribunal(codigo) {
-    switch (codigo) {
-        //TJRJ
-        case "819":
-            return "http://www4.tjrj.jus.br/ConsultaUnificada/consulta.do#tabs-numero-indice0";
-            break;
-        
-        //JFRJ
-        case "402":
-            return "http://procweb.jfrj.jus.br/portal/consulta/cons_procs.asp";
-            break;
-    
-        default:
-            break;
+function controlC() {
+    var copyText = document.getElementById("barraBusca");
+    copyText.select();
+    document.execCommand("copy");
+}
+
+function retornaInstancia() {
+    if (document.getElementById("grau_2").checked == true) {
+        return "segunda";
+    } else if (document.getElementById("stj").checked == true) {
+        return "unica";
+    } else if (document.getElementById("stf").checked == true) {
+        return "unica";
+    } if (document.getElementById("tst").checked == true) {
+        return "unica";
+    } else {
+        return "primeira";
+    }
+}
+
+function tribunaisSuperiores() {
+    if (document.getElementById("stj").checked == true) {
+        return "stj";
+    } else if (document.getElementById("stf").checked == true) {
+        return "stf";
+    } else if (document.getElementById("tst").checked == true) {
+        return "tst";
+    } else {
+        return "";
     }
 }
 
 function buscaTJFacil() {
     
-    let numeroProcesso = document.getElementById("barraBusca").value;
-    let numeroCNJ = preparaNumero(numeroProcesso);
-    let codTribunal = numeroCNJ.slice(13, -4);
-    let tribunal = defineTribunal(codTribunal);
-    document.getElementById("frameConteudo").setAttribute("src", tribunal);
+    let input = document.getElementById("barraBusca").value;
 
+	if (input.charAt(0) >= '0' && input.charAt(0) <= '9') {
+        let numeroProcesso = preparaNumero(input);
 
-}
-
-
-
-
-    // NUMERAÇÃO CNJ
-    // NNNNNNN-DD.AAAA.JTR.OOOO 
-
-
-    // TJRJ
-    // document.getElementById("frameConteudo").setAttribute("src", "http://www4.tjrj.jus.br/ConsultaUnificada/consulta.do#tabs-numero-indice0");
+        let tipoProcesso = "fisico";
+        if (document.getElementById("eproc").checked == true) {
+            tipoProcesso = "eletronico";
+        }
     
-    // JFRJ 
-    // document.getElementById("frameConteudo").setAttribute("src", "http://procweb.jfrj.jus.br/portal/consulta/cons_procs.asp");
+        let instancia = retornaInstancia();
+    
+        let terceiroGrau = tribunaisSuperiores();
+        if (terceiroGrau != "") {
+            numeroProcesso.tribunal = terceiroGrau;
+        }
 
-    // TJSP
-    // document.getElementById("frameConteudo").setAttribute("src", "https://esaj.tjsp.jus.br/esaj/portal.do?servico=190090");
+        controlC();
+        window.open(tribunais[numeroProcesso.tribunal][tipoProcesso][instancia], '_blank');
+    
+    } else {
+    
+        let nomeTribunal;
 
-    // JFSP
-    // document.getElementById("frameConteudo").setAttribute("src", "http://www.jfsp.jus.br/foruns-federais");
+        for (let chave in tribunais) {
+
+            nomeTribunal = tribunais[chave]["nome"];
+            nomeTeste = nomeTribunal.toLowerCase();
+          
+            if (nomeTeste.startsWith(input.toLowerCase())) {
+                controlC();
+                window.open(tribunais[chave]["principal"], '_blank');
+            }
+        }
+
+    }
+}

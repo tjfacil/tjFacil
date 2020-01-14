@@ -2,73 +2,180 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: 0;
+    font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
 :root {
-    --corDoFundo: #f4f4f4;
-    --corDoTexto: #373737;
+    --corClara: #f4f4f4;
+    --corEscura: #071013;
 }
 
-nav {
-    overflow: hidden;
-    background-color: var(--corDoFundo);
-    width: 99vw;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
+body {
+    background-color: var(--corEscura);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.divBarraTopo a {
+    color: var(--corClara);
+}
+
+.divBarraTopo a:visited {
+    color: var(--corClara);
+}
+
+.divBarraTopo {
     height: 5vh;
-    position: sticky;
-    top: 0;
-}
-
-nav a {
-    color: var(--corDoTexto);
-    text-decoration: none;   
-}
-
-ul {
-    list-style-type: none;
-    list-style-position: inside;
-    display: inline;
-}
-
-.classeBusca li {
-    width: auto;
-    height: 3em;
-    float: left;
-    display: flex;
-    align-items: center;
-}
-
-.classeMenu li {
-    width: 10em;
-    height: 3em;
-    float: right;
-    display: flex;
-    align-items: center;
-}
-
-h1 {
-    width: auto;
-    margin-right: 2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: var(--corDoTexto)
-}
-
-input[type="text"] {
-    border-radius: 5px;
-    width: 30em;
-    height: 2em;
-}
-
-#divConteudo {
-    width: 99vw;
-    height: 100vw;
-    padding-left: 0;
-}
-
-iframe {
+    padding: 0 1vw;
     width: 100%;
-    height: 100%;
-    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+    
+}
+
+.divLogo {
+    height: 30vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.divLogo h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 88px;
+    color: var(--corClara);
+    margin-bottom: 10px;
+}
+
+.divBarraBusca {
+    background-color: white;
+    border-radius: 25px;
+    width: 40%;
+    max-width: 550px;
+    overflow: hidden;
+    padding: .75rem;
+}
+
+.divBarraBusca input[type="text"] {
+    width: 80%;
+    font-size: 1.1em;
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 2px;
+    padding: 5px;
+}
+
+.divBarraBusca input:focus {
+    outline: none;
+}
+
+.divBarraBusca input[type="submit"] {
+    text-transform: uppercase;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.divBarraBusca input[type="submit"] {
+    background-color: var(--corEscura);
+    color: var(--corClara);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 25px;
+  }
+  
+.divBarraBusca a:hover, a:active {
+    background-color: darkslategray;
+}
+
+.divBotoes,
+.divProcEletronico {
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 1.1em;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.divBotoes input[type=radio], 
+.divProcEletronico input[type=checkbox] {
+    display:none;
+}
+ 
+.divBotoes label,
+.divProcEletronico label {
+    cursor: pointer;
+    color: var(--corClara);
+}
+
+.divBotoes input[type="radio"] + label:before,
+.divProcEletronico input[type="checkbox"] + label:before {
+    border: 1px solid #5D5C5C;
+    content: "\00a0";
+    display: inline-block;
+    font: 16px/1em sans-serif;
+    height: 16px;
+    margin: 0 0 0 0;
+    padding: 0;
+    vertical-align: top;
+    width: 16px;
+    border-radius:4px;
+}
+ 
+.divBotoes input[type="radio"]:checked + label:before,
+.divProcEletronico input[type="checkbox"]:checked + label:before {
+    background: #A0A0A0;
+    color: #FFF;
+    content: "\2713";
+    text-align: center;
+}
+ 
+.divBotoes input[type="radio"]:checked + label:after,
+.divProcEletronico input[type="checkbox"]:checked + label:after {
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+
+    .divBarraBusca {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        padding: 0;
+        margin-bottom: 2em;
+        max-width: 550px;
+    }
+
+    .divBarraBusca input[type="text"] {
+        width: 100%;
+        padding: .5em;
+        height: 3em;
+    }
+
+    .divBarraBusca input[type="submit"] {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .divBotoes {
+        min-height: 10vh;
+        width: 80%;
+        font-size: 1em;
+    }
+
+
 }
