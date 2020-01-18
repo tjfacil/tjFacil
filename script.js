@@ -14,7 +14,7 @@ function preparaNumero(input) {
     };
 
     if (numObj.tribunal.charAt(0) == "4") {
-        numObj.tribunal += numObj.regiao.charAt(0) + numObj.regiao.charAt(1); 
+        numObj.tribunal += numObj.regiao.charAt(0) + numObj.regiao.charAt(1);
     };
 
     if (numObj.tribunal.charAt(0) == "6") {
@@ -61,7 +61,6 @@ function tribunaisSuperiores() {
 }
 
 function buscaTJFacil() {
-    
     let input = document.getElementById("barraBusca").value;
 
 	if (input.charAt(0) >= '0' && input.charAt(0) <= '9') {
@@ -71,9 +70,9 @@ function buscaTJFacil() {
         if (document.getElementById("eproc").checked == true) {
             tipoProcesso = "eletronico";
         }
-    
+
         let instancia = retornaInstancia();
-    
+
         let terceiroGrau = tribunaisSuperiores();
         if (terceiroGrau != "") {
             numeroProcesso.tribunal = terceiroGrau;
@@ -81,21 +80,19 @@ function buscaTJFacil() {
 
         controlC();
         window.open(tribunais[numeroProcesso.tribunal][tipoProcesso][instancia], '_blank');
-    
+
     } else {
-    
         let nomeTribunal;
 
         for (let chave in tribunais) {
 
             nomeTribunal = tribunais[chave]["nome"];
             nomeTeste = nomeTribunal.toLowerCase();
-          
+
             if (nomeTeste.startsWith(input.toLowerCase())) {
                 controlC();
                 window.open(tribunais[chave]["principal"], '_blank');
             }
         }
-
     }
 }
