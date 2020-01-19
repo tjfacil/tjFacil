@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>splitPDF</title>
+
+    <style>
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        #link-download {
+            font-size: 24px;
+        }
+
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 256px;
+            height: 128px;
+        }
+
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>splitPDF</h1>
+    <h2>Divida seus arquivos PDF em arquivos menores automaticamente e determine o tamanho máximo das partes!</h2>
+
+    <a href="https://drive.google.com/open?id=1Y231AfXhFLgnE5K171fYxl285DqDxkzS" target="_blank" id="link-download">Link para download</a>
+
+    <h3>Como usar:</h3>
+
+    <p>Realizar o donwload pelo link acima e extrair o arquivo baixado com <a href="https://www.win-rar.com", target="_blank">WinRAR</a> ou semelhantes.</p>
+    <p>Após a descompactação, você terá uma pasta chamada splitPDF. Dentro dela, haverá um arquivo chamado splitPDF e uma pasta chamada docs.</p>
+    <p>Coloque os arquivos PDF que deseja dividir dentro da pasta docs e execute o arquivo splitPDF.</p>
+    <p>Uma tela preta aparecerá em sua tela. Aguarde até que a mensagem "Tamanho máximo de cada arquivo (em MB):" apareça.</p>
+    <p>Digite o tamanho máximo que cada arquivo de saída poderá ter, em MB, e aperte enter. Somente são aceitos números inteiros positivos.</p>
+    <p>Aguarde a execução do programa. Dependendo do tamanho e da quantidade de arquivos ou da velocidade de seu computador, isso pode levar de alguns segundos até poucos minutos.</p>
+    <p>Se a tela preta fechar sozinha, é provável que algum erro tenha acontecido. Veja na seção abaixo os erros mais comuns e como evitá-los.</p>
+    <p>Se o programa terminar sua execução normalmente, a mensagem "Aperte enter para sair" aparecerá. Aperte enter e a tela preta fechará.</p>
+    <p>Vá até a pasta docs. Nela, além dos documentos originais, deve haver uma nova pasta para cada arquivo. Dentro de cada uma dessas pastas estarão as partes dos arquivos divididos.</p>
+    <p>As pastas criadas terão o mesmo nome dos arquivos originais, e cada parte do arquivo dividido terá o sufixo -parteN, onde N é o número da parte.</p>
+
+    <h3>Dica:</h3>
+    <p>Você pode mover o splitPDF para qualquer pasta de seu computador e executá-lo a partir dessa pasta. O programa, sempre que executado, procurará por uma pasta chamada docs dentro do diretório em que estiver no momento e dividirá todos os arquivos com extensão .pdf que estiverem diretamente dentro daquele diretório.</p>
+
+    <h3>Erros comuns:</h3>
+    <ul>
+        <li>
+            Durante a execução do programa ele criará pastas, dentro da pasta 'docs', com o mesmo nome dos arquivos .pdf que estiverem dentro da pasta 'docs'. Se essas pastas já existirem, não será possível para o programa cria-las e ele falhará a execução, sem dividir nenhum dos arquivos. Esta escolha foi feita para evitar que arquivos sejam sobrescritos por acidente.
+            Para evitar erros, garanta que não existe nenhuma pasta com o mesmo nome dos arquivos .pdf que estiverem dentro da pasta 'docs'.
+        </li>
+
+        <li>
+            Arquivos .pdf gerados a partir de fotos tiradas por smartphones podem ter tamanhos muito grandes por página, o que pode atrapalhar a execução do programa. O mesmo pode acontecer com imagens scaneadas em resolução muito grande, ou arquivos .pdf com muitas imagens.
+            Caso os arquivos de saída apresentem inconsistências em seus tamanhos ou sejam gerados vários arquivos com uma única página cada, tente comprimir os arquivos de entrada para reduzir a resolução e o tamanho de cada página.
+        </li>
+    </ul>
+
+    <h3>Imagens:</h3>
+    <a href="pasta.jpg" target="_blank"><img src="pasta.jpg" alt="pasta principal"></a>
+    <a href="pastadocs.jpg" target="_blank"><img src="pastadocs.jpg" alt="pasta docs"></a>
+    <a href="prompt.jpg" target="_blank"><img src="prompt.jpg" alt="prompt"></a>
+    <a href="sucesso.jpg" target="_blank"><img src="sucesso.jpg" alt="sucesso"></a>
+    <a href="novapastadocs.jpg" target="_blank"><img src="novapastadocs.jpg" alt="nova pasta docs"></a>
+    <a href="listaarquivos.jpg" target="_blank"><img src="listaarquivos.jpg" alt="lista arquivos"></a>
+
+    <h3>Código livre:</h3>
+    <p>O splitPDF é um programa totalmente gratuito, escrito em Python, e de código livre. Todos podem contribuir para o seu desenvolvimento ou adaptar o código para suas próprias necessidades. Clique <a href="https://github.com/araleo/pdfsplit">aqui</a> para acessar o seu repositório. </p>
+
+</body>
+</html>
