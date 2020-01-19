@@ -41,7 +41,38 @@ a {
     justify-content: space-between;
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 300;
-    
+}
+
+.divComoUsar {
+    font-family: 'PT Sans', sans-serif;
+    color: var(--corClara);
+    border: 1px solid var(--corClara);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.2em;
+    display: none;
+}
+
+.divComoUsar #tit {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.divComoUsar ul {
+    list-style-position: inside;
+    list-style-type: circle;
+    margin-top: 20px;
+}
+
+.divComoUsar li {
+    margin-top: 20px;
+
+}
+
+.divComoUsar #tab {
+    margin-left: 25px;
+    margin-top: 0;
 }
 
 .divLogo {
@@ -94,7 +125,7 @@ a {
     display: inline-block;
     border-radius: 25px;
   }
-  
+
 .divBarraBusca a:hover, a:active {
     background-color: darkslategray;
 }
@@ -110,11 +141,11 @@ a {
     font-family: 'PT Sans', sans-serif;
 }
 
-.divBotoes input[type=radio], 
+.divBotoes input[type=radio],
 .divProcEletronico input[type=checkbox] {
     display:none;
 }
- 
+
 .divBotoes label,
 .divProcEletronico label {
     cursor: pointer;
@@ -134,7 +165,7 @@ a {
     width: 16px;
     border-radius:4px;
 }
- 
+
 .divBotoes input[type="radio"]:checked + label:before,
 .divProcEletronico input[type="checkbox"]:checked + label:before {
     background: #A0A0A0;
@@ -142,13 +173,22 @@ a {
     content: "\2713";
     text-align: center;
 }
- 
+
 .divBotoes input[type="radio"]:checked + label:after,
 .divProcEletronico input[type="checkbox"]:checked + label:after {
     font-weight: bold;
 }
 
 @media (max-width: 1200px) {
+
+    .divComoUsar #tab {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .divComoUsar {
+        text-align: justify;
+    }
 
     .divBarraBusca {
         display: flex;

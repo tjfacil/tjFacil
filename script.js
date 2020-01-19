@@ -1,3 +1,26 @@
+function controlC() {
+    var copyText = document.getElementById("barraBusca");
+    copyText.select();
+    document.execCommand("copy");
+}
+
+function toggleDivComoUsar() {
+    let divComoUsar = document.getElementById("divComoUsar")
+    let linkInstrucoes = document.getElementById("link-instrucoes")
+    let divLogo = document.getElementById("divLogo")
+
+    if (divComoUsar.style.display === "none") {
+        divComoUsar.style.display = "block"
+        linkInstrucoes.innerHTML = "Fechar instruções"
+        divLogo.style.height = "20vh";
+    } else {
+        divComoUsar.style.display = "none";
+        linkInstrucoes.innerHTML = "Como utilizar"
+        divLogo.style.height = "30vh";
+    }
+}
+
+
 function preparaNumero(input) {
     input = input.replace(/\D/g,'');
     if (input.length > 20) {
@@ -28,12 +51,6 @@ function preparaNumero(input) {
     return numObj;
 }
 
-function controlC() {
-    var copyText = document.getElementById("barraBusca");
-    copyText.select();
-    document.execCommand("copy");
-}
-
 function retornaInstancia() {
     if (document.getElementById("grau_2").checked == true) {
         return "segunda";
@@ -50,11 +67,11 @@ function retornaInstancia() {
 
 function tribunaisSuperiores() {
     if (document.getElementById("stj").checked == true) {
-        return "stj";
+        return "STJ";
     } else if (document.getElementById("stf").checked == true) {
-        return "stf";
+        return "STF";
     } else if (document.getElementById("tst").checked == true) {
-        return "tst";
+        return "TST";
     } else {
         return "";
     }
