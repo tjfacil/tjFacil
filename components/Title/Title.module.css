@@ -1,0 +1,10 @@
+.header {
+  height: 30vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.header h1 {
+    font-size: 5rem;
+}

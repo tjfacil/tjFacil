@@ -1,16 +1,27 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500&family=Roboto&display=swap");
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --clr-background: #16162d;
+  --clr-title: #dbdbdb;
+  --clr-detail: #95b4ca;
+  --clr-error: #d89191;
 }
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--clr-background);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  color: var(--clr-title);
 }
