@@ -1,18 +1,14 @@
 export interface Court {
+  _id: string;
   id: string;
   code: string;
-  name: string;
   abbr: string;
+  name: string;
   mainPage: string;
-  search: {
-    first: Instance;
-    second: Instance;
-  };
-}
-
-interface Instance {
-  physical: string;
-  electronic: string;
+  firstPhysicalSearchPage: string;
+  firstElectronicSearchPage: string;
+  secondPhysicalSearchPage: string;
+  secondElectronicSearchPage: string;
 }
 
 export const getCourtUrl = (
@@ -43,13 +39,13 @@ const getSuitSearchUrl = (
   mode: string
 ): string => {
   if (instance === 'first' && mode === 'physical') {
-    return court.search.first.physical;
+    return court.firstPhysicalSearchPage;
   } else if (instance === 'first' && mode === 'electronic') {
-    return court.search.first.electronic;
+    return court.firstElectronicSearchPage;
   } else if (instance === 'second' && mode === 'physical') {
-    return court.search.second.physical;
+    return court.secondPhysicalSearchPage;
   } else if (instance === 'second' && mode === 'electronic') {
-    return court.search.second.electronic;
+    return court.secondElectronicSearchPage;
   } else {
     return '';
   }
