@@ -1,6 +1,7 @@
 .radioContainer {
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1em auto;
@@ -11,10 +12,6 @@
 .radioContainer label {
   cursor: pointer;
   display: flex;
-}
-
-.radioContainer .firstLabel {
-  margin-right: 1rem;
 }
 
 .radioContainer input[type='radio'] {
@@ -34,4 +31,17 @@
 
 .radioContainer input[type='radio']:checked + label::before {
   background-color: var(--clr-detail);
+}
+
+.radioOption {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 400px) {
+  .radioContainer {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 450px;
+  }
 }

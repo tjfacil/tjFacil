@@ -15,7 +15,7 @@ const Radio: React.FC<IProps> = ({ radioName, options, changeHandler }) => {
   return (
     <div className={styles.radioContainer}>
       {options.map((option) => (
-        <div key={option.value}>
+        <div key={option.value} className={styles.radioOption}>
           <input
             type='radio'
             name={radioName}
