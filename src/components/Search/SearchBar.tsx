@@ -34,7 +34,7 @@ const SearchBar: React.FC<IProps> = ({
 
   useEffect(() => {
     const newData: IAutoCompleteData[] = [];
-    courtsData.map((court) => {
+    courtsData.forEach((court) => {
       newData.push({
         id: court.id,
         value: court.abbr,

@@ -1,0 +1,5 @@
+.errorContainer {
+  text-align: center;
+  color: var(--clr-title);
+  font-size: 1.2rem;
+}

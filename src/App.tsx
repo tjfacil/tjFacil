@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Header from './components/Header/Header';
 import Search from './components/Search/Search';
+import Error from './components/UI/Error/Error';
+import Spinner from './components/UI/Spinner/Spinner';
 import useHttp from './hooks/use-http';
+import { API_URL } from './util/config';
 import { Court } from './util/lib';
 
 interface ICourtResponse {
@@ -18,10 +21,7 @@ function App() {
     const setCourts = (courtsResponse: ICourtResponse) => {
       setCourtsData(courtsResponse.courts);
     };
-    fetchCourts(
-      { url: 'https://api-tribunais.herokuapp.com/courts' },
-      setCourts
-    );
+    fetchCourts({ url: API_URL + 'courts' }, setCourts);
   }, []);
 
   const backgroundChangeHandler = () => {
@@ -31,11 +31,17 @@ function App() {
   return (
     <main onClick={backgroundChangeHandler}>
       <Header />
-      <Search
-        courtsData={courtsData}
-        showAutoComplete={showAutoComplete}
-        setShowAutoComplete={setShowAutoComplete}
-      />
+      {isLoading ? (
+        <Spinner />
+      ) : error ? (
+        <Error />
+      ) : (
+        <Search
+          courtsData={courtsData}
+          showAutoComplete={showAutoComplete}
+          setShowAutoComplete={setShowAutoComplete}
+        />
+      )}
     </main>
   );
 }
