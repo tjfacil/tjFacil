@@ -14,7 +14,7 @@ interface IProps {
 const Radio: React.FC<IProps> = ({ radioName, options, changeHandler }) => {
   return (
     <div className={styles.radioContainer}>
-      {options.map((option) => (
+      {options.map((option, index) => (
         <div key={option.value} className={styles.radioOption}>
           <input
             type='radio'
@@ -22,6 +22,7 @@ const Radio: React.FC<IProps> = ({ radioName, options, changeHandler }) => {
             id={option.value}
             value={option.value}
             onChange={changeHandler}
+            defaultChecked={index === 0}
           />
           <label htmlFor={option.value}>{option.label}</label>
         </div>
