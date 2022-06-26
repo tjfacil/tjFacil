@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header/Header';
 import Search from './components/Search/Search';
 import Error from './components/UI/Error/Error';
@@ -22,7 +22,7 @@ function App() {
       setCourtsData(courtsResponse.courts);
     };
     fetchCourts({ url: API_URL + 'courts' }, setCourts);
-  }, []);
+  }, [fetchCourts]);
 
   const backgroundChangeHandler = () => {
     setShowAutoComplete(false);
