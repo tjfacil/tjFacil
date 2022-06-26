@@ -18,7 +18,7 @@ export const getCourtUrl = (
   mode: string
 ): string => {
   let court;
-  if (inputText.charAt(0).match(/[0-9]/)) {
+  if (isFirstCharNumeric(inputText)) {
     const courtCode = getCourtCodeFromSuitNumber(inputText);
     court = courtData.find((court) => court.code === courtCode);
     if (court) {
@@ -86,3 +86,7 @@ export const validateInput = (inputText: string): boolean => {
   const firstChar = inputText.charAt(0);
   return !!firstChar.match(/[a-z0-9]/i);
 };
+
+export const isFirstCharNumeric = (s: string): boolean => {
+  return !!s.trim().charAt(0).match(/[0-9]/)
+}

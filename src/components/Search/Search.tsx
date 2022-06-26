@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { Court, getCourtUrl, validateInput } from '../../util/lib';
+import {
+  Court,
+  getCourtUrl,
+  isFirstCharNumeric,
+  validateInput,
+} from '../../util/lib';
 import Checkbox from '../UI/Checkbox/Checkbox';
 import Radio from '../UI/Radio/Radio';
 import SearchBar from './SearchBar';
@@ -70,16 +75,20 @@ const Search: React.FC<IProps> = ({
         showAutoComplete={showAutoComplete}
         setShowAutoComplete={setShowAutoComplete}
       />
-      <Checkbox
-        label='Processo Eletrônico'
-        checkboxId='cb-pje'
-        changeHandler={handleModeChange}
-      />
-      <Radio
-        radioName='instance'
-        options={RADIO_OPTIONS}
-        changeHandler={handleInstanceChange}
-      />
+      {isFirstCharNumeric(inputText) && (
+        <>
+          <Checkbox
+            label='Processo Eletrônico'
+            checkboxId='cb-pje'
+            changeHandler={handleModeChange}
+          />
+          <Radio
+            radioName='instance'
+            options={RADIO_OPTIONS}
+            changeHandler={handleInstanceChange}
+          />
+        </>
+      )}
     </form>
   );
 };
