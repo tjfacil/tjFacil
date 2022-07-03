@@ -12,7 +12,7 @@ interface ICourtResponse {
   courts: Court[];
 }
 
-function App() {
+const App = () => {
   const [showAutoComplete, setShowAutoComplete] = useState<boolean>(false);
   const [courtsData, setCourtsData] = useState<Court[]>([]);
   const { isLoading, error, sendRequest: fetchCourts } = useHttp();
@@ -44,6 +44,6 @@ function App() {
       )}
     </main>
   );
-}
+};
 
 export default App;

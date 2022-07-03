@@ -77,6 +77,7 @@ const SearchBar: React.FC<IProps> = ({
           onBlur={() => setIsInputOnFocus(false)}
           onChange={handleInputTextChange}
           className={styles.input}
+          data-testid="searchBarInput"
         />
         <button className={styles.button}>Buscar</button>
       </div>

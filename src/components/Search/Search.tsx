@@ -65,7 +65,7 @@ const Search: React.FC<IProps> = ({
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} data-testid='searchForm'>
       <SearchBar
         inputText={inputText}
         setInputText={setInputText}

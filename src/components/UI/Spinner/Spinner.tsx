@@ -4,7 +4,7 @@ interface IProps {}
 
 const Spinner: React.FC<IProps> = () => {
   return (
-    <div className={styles.spinnerContainer}>
+    <div className={styles.spinnerContainer} data-testid="spinner">
       <div className={styles.ldsDefault}>
         <div></div>
         <div></div>
