@@ -24,13 +24,14 @@ const AutoComplete: React.FC<IProps> = ({ data, inputText, clickHandler }) => {
   }, [data, inputText]);
 
   return (
-    <ul className={styles.list}>
+    <ul className={styles.list} data-testid='autocomplete'>
       {filteredData.map((entry) => (
         <li
           className={styles.item}
           key={entry.id}
           value={entry.value}
           onClick={clickHandler}
+          data-testid='autocompleteOption'
         >
           {entry.label}
         </li>

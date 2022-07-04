@@ -8,7 +8,7 @@ interface IProps {
 
 const Checkbox: React.FC<IProps> = ({ label, checkboxId, changeHandler }) => {
   return (
-    <div className={styles.checkboxContainer}>
+    <div className={styles.checkboxContainer} data-testid='checkbox'>
       <input type='checkbox' id={checkboxId} onChange={changeHandler} />
       <label htmlFor={checkboxId}>{label}</label>
     </div>

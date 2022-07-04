@@ -13,9 +13,9 @@ interface IProps {
 
 const Radio: React.FC<IProps> = ({ radioName, options, changeHandler }) => {
   return (
-    <div className={styles.radioContainer}>
+    <div className={styles.radioContainer} data-testid='radio'>
       {options.map((option, index) => (
-        <div key={option.value} className={styles.radioOption}>
+        <div key={option.value} className={styles.radioOption} data-testid='radioOption'>
           <input
             type='radio'
             name={radioName}
