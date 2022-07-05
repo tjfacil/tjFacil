@@ -67,7 +67,7 @@ const SearchBar: React.FC<IProps> = ({
 
   return (
     <>
-      <div className={inputBackgroundClasses}>
+      <div className={inputBackgroundClasses} data-testid='searchBar'>
         <input
           type='text'
           value={inputText}
