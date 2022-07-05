@@ -33,7 +33,7 @@ export const getCourtUrl = (
   return '';
 };
 
-const getSuitSearchUrl = (
+export const getSuitSearchUrl = (
   court: Court,
   instance: string,
   mode: string
@@ -51,7 +51,7 @@ const getSuitSearchUrl = (
   }
 };
 
-const getCourtCodeFromSuitNumber = (inputText: string): string => {
+export const getCourtCodeFromSuitNumber = (inputText: string): string => {
   const suitNumber = getSuitNumberFromInput(inputText);
   const courtCode = suitNumber.slice(13, -4);
   const courtCodeIdChar = courtCode.charAt(0);
@@ -71,7 +71,7 @@ const getCourtCodeFromSuitNumber = (inputText: string): string => {
   return courtCode;
 };
 
-const getSuitNumberFromInput = (inputText: string): string => {
+export const getSuitNumberFromInput = (inputText: string): string => {
   const suitNumber = inputText.replace(/\D/g, '');
   if (inputText.length > 20) {
     return suitNumber.slice(-20);

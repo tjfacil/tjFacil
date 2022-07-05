@@ -30,8 +30,8 @@ export const mockCourtsData = [
   {
     _id: 'testMongoId1',
     id: 'testId1',
-    code: 'testCode1',
-    abbr: 'testAbbr1',
+    code: '123',
+    abbr: 'TESTABBR1',
     name: 'testName1',
     mainPage: 'testMainPage1',
     firstPhysicalSearchPage: 'testFirstPhysicalSearchPage1',
@@ -42,8 +42,8 @@ export const mockCourtsData = [
   {
     _id: 'testMongoId2',
     id: 'testId2',
-    code: 'testCode2',
-    abbr: 'testAbbr2',
+    code: '234',
+    abbr: 'TESTABBR2',
     name: 'testName2',
     mainPage: 'testMainPage2',
     firstPhysicalSearchPage: 'testFirstPhysicalSearchPage2',
@@ -54,8 +54,8 @@ export const mockCourtsData = [
   {
     _id: 'testMongoId3',
     id: 'testId3',
-    code: 'testCode3',
-    abbr: 'testAbbr3',
+    code: '345',
+    abbr: 'TESTABBR3',
     name: 'testName3',
     mainPage: 'testMainPage3',
     firstPhysicalSearchPage: 'testFirstPhysicalSearchPage3',

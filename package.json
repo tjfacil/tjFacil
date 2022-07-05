@@ -41,6 +41,6 @@
     ]
   },
   "jest": {
-    "watchPathIgnorePatterns": ["(.*.ts$)"]
+    "watchPathIgnorePatterns": ["(.*-data.ts$)"]
   }
 }
